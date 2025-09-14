@@ -1,19 +1,16 @@
 import 'package:carpoolapp/screens/confirm_ride_screen.dart';
 import 'package:carpoolapp/screens/search_ride_screen.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../apis/rides_api.dart';
 import '../models/rides.dart';
-import 'home_screen.dart';
 
 class AvailableRidesPerSearchScreen extends StatefulWidget {
   final String Destination;
   final String Departure;
   const AvailableRidesPerSearchScreen(
-      {Key? key, required this.Destination, required this.Departure})
-      : super(key: key);
+      {super.key, required this.Destination, required this.Departure});
 
   @override
   State<AvailableRidesPerSearchScreen> createState() =>
@@ -69,7 +66,7 @@ class _AvailableRidesPerSearchScreenState
         future: ridesFuture,
         builder: (context, snapshot) {
           print(snapshot.data!.length);
-          if (snapshot.hasData && snapshot.data!.length > 0) {
+          if (snapshot.hasData && snapshot.data!.isNotEmpty) {
             return ListView.builder(
               shrinkWrap: true,
               itemCount: snapshot.data!.length,

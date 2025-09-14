@@ -1,15 +1,12 @@
-import 'package:carpoolapp/screens/home_screen.dart';
 import 'package:carpoolapp/screens/ride_confirmed_screen.dart';
 import 'package:flutter/material.dart';
 
-import '../apis/car_api.dart';
 import '../apis/rides_api.dart';
-import '../models/car.dart';
 import '../models/rides.dart';
 
 class ConfirmRideScreen extends StatefulWidget {
   final String idCar;
-  const ConfirmRideScreen({Key? key, required this.idCar}) : super(key: key);
+  const ConfirmRideScreen({super.key, required this.idCar});
 
   @override
   State<ConfirmRideScreen> createState() => _ConfirmRideScreenState();
@@ -53,7 +50,7 @@ class _ConfirmRideScreenState extends State<ConfirmRideScreen> {
       body: FutureBuilder<List<Rides>>(
         future: ridesFuture,
         builder: (context, snapshot) {
-          if (snapshot.hasData && snapshot.data!.length > 0) {
+          if (snapshot.hasData && snapshot.data!.isNotEmpty) {
             return ListView.builder(
               shrinkWrap: true,
               itemCount: snapshot.data!.length,

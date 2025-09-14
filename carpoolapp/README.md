@@ -1,4 +1,4 @@
-# carpoolapp
+# carpool
 
 A new Flutter project.
 

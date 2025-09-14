@@ -28,16 +28,16 @@ class Rides {
     Ride_Fees = json["Ride_Fees"];
   }
   Map<String, dynamic> toJson() {
-    final _data = <String, dynamic>{};
-    _data["_id"] = id;
-    _data["carId"] = carId;
-    _data["Destination"] = Destination;
-    _data["Departure_Date"] = Departure_Date;
-    _data["Departure_Location"] = Departure_Location;
-    _data["Departure_Time"] = Departure_Time;
-    _data["Ride_Fees"] = Ride_Fees;
+    final data = <String, dynamic>{};
+    data["_id"] = id;
+    data["carId"] = carId;
+    data["Destination"] = Destination;
+    data["Departure_Date"] = Departure_Date;
+    data["Departure_Location"] = Departure_Location;
+    data["Departure_Time"] = Departure_Time;
+    data["Ride_Fees"] = Ride_Fees;
 
-    return _data;
+    return data;
   }
 
 // Get data from backend

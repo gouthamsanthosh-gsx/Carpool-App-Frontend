@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:carpoolapp/models/rides.dart';
 
 class RidesDisplay extends StatelessWidget {
-  const RidesDisplay({Key? key, this.model, this.onDelete}) : super(key: key);
+  const RidesDisplay({super.key, this.model, this.onDelete});
 
   final Rides? model;
   final Function? onDelete;

@@ -3,12 +3,6 @@ import 'dart:convert';
 import 'package:carpoolapp/config.dart';
 import 'package:flutter/material.dart';
 import 'package:carpoolapp/screens/home_screen.dart';
-import 'package:carpoolapp/screens/dialog_screen.dart';
-import 'package:carpoolapp/screens/ride_screen.dart';
-import 'package:carpoolapp/screens/rides_published_screen.dart';
-import 'package:carpoolapp/apis/rides_api.dart';
-import 'package:carpoolapp/apis/google_api.dart';
-import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import 'package:uuid/uuid.dart';
 import 'package:http/http.dart' as http;
@@ -18,6 +12,8 @@ void main() {
 }
 
 class ShareRideScreen extends StatefulWidget {
+  const ShareRideScreen({super.key});
+
   @override
   State<ShareRideScreen> createState() => _ShareRideScreenState();
 }
@@ -27,14 +23,14 @@ class _ShareRideScreenState extends State<ShareRideScreen> {
   final _dateController = TextEditingController();
 
   /// TextField controllers */
-  static late TextEditingController _DestinationController =
+  static final TextEditingController _DestinationController =
       TextEditingController();
   TextEditingController DepartureLocationController = TextEditingController();
   TextEditingController DepartureDateController = TextEditingController();
   TextEditingController DepartureTimeController = TextEditingController();
   TextEditingController RideFeesController = TextEditingController();
   var uuid = Uuid();
-  String _sessionToken = '122344';
+  final String _sessionToken = '122344';
   List<dynamic> _placesList = [];
 
   String Destination = '';
@@ -364,7 +360,7 @@ class _ShareRideScreenState extends State<ShareRideScreen> {
   }
 
   Widget _datePicker() {
-    bool _decideWhichDayToEnable(DateTime day) {
+    bool decideWhichDayToEnable(DateTime day) {
       if ((day.isAfter(DateTime.now().subtract(Duration(days: 1))) &&
           day.isBefore(DateTime.now().add(Duration(days: 30))))) {
         return true;
@@ -385,18 +381,18 @@ class _ShareRideScreenState extends State<ShareRideScreen> {
           context: context,
           // firstDate: DateTime(2000),
           // lastDate: DateTime(2100),
-          firstDate: new DateTime(DateTime.now().year),
-          lastDate: new DateTime(DateTime.now().year + 1),
+          firstDate: DateTime(DateTime.now().year),
+          lastDate: DateTime(DateTime.now().year + 1),
           initialDate: DateTime.now(),
           //selectableDayPredicate: (day) => day.isBefore(DateTime.now()),
           // selectableDayPredicate: (day) => day.isAfter(DateTime.now()),
-          selectableDayPredicate: _decideWhichDayToEnable,
+          selectableDayPredicate: decideWhichDayToEnable,
         );
         if (selectedDate != null) {
           setState(() {
             /** Setting Departure_Date that will be in post function to _dateController.text for date of departure */
             _dateController.text = DateFormat.yMd().format(selectedDate);
-            print("####" + _dateController.text);
+            print("####${_dateController.text}");
             Departure_Date = DateFormat.yMd()
                 .format(selectedDate); //set the value of text field.
           });

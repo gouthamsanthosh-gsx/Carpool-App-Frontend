@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import 'home_screen.dart';
-import 'package:carpoolapp/models/rides.dart';
 import 'package:carpoolapp/apis/rides_api.dart';
-import 'package:carpoolapp/apis/google_api.dart';
 
 void main() {
   runApp(RidesPublishedScreen());
 }
 
 class RidesPublishedScreen extends StatefulWidget {
+  const RidesPublishedScreen({super.key});
+
   @override
   State<RidesPublishedScreen> createState() => _RidesPublishedScreenState();
 }

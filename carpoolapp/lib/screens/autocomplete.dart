@@ -14,9 +14,9 @@ class GooglePlaces extends StatefulWidget {
 }
 
 class _GooglePlacesState extends State<GooglePlaces> {
-  TextEditingController _controller = TextEditingController();
+  final TextEditingController _controller = TextEditingController();
   var uuid = Uuid();
-  String _sessionToken = "1235";
+  final String _sessionToken = "1235";
   List<dynamic> _placesList = [];
   @override
   void initState() {
@@ -32,11 +32,11 @@ class _GooglePlacesState extends State<GooglePlaces> {
   }
 
   void getSuggestion(String input) async {
-    String kPlaces_Api_Key = "AIzaSyD6hhlx6VoL2n0HRnwuiTeZwuRN0_og0ys";
+    String kplacesApiKey = "AIzaSyD6hhlx6VoL2n0HRnwuiTeZwuRN0_og0ys";
     String baseURL =
         "https://maps.googleapis.com/maps/api/place/autocomplete/json";
     String request =
-        '$baseURL?input=$input&key=$kPlaces_Api_Key&sessionToken=$_sessionToken';
+        '$baseURL?input=$input&key=$kplacesApiKey&sessionToken=$_sessionToken';
     // print(
     //     '$baseURL?input=$input&key=$kPlaces_Api_Key&sessionToken=$_sessionToken');
     var response = await http.get(Uri.parse(request));

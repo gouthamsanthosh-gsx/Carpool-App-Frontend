@@ -1,10 +1,8 @@
-import 'package:carpoolapp/main.dart';
 import 'package:carpoolapp/screens/home_screen.dart';
-import 'package:carpoolapp/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
 class Splash extends StatefulWidget {
-  const Splash({Key? key}) : super(key: key);
+  const Splash({super.key});
 
   @override
   State<Splash> createState() => _SplashState();
@@ -65,13 +63,13 @@ class _SplashState extends State<Splash> {
             Padding(
               padding: const EdgeInsets.all(60),
               child: ElevatedButton(
-                child: Text("Let's go"),
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.white, shape: StadiumBorder(), backgroundColor: Color(0xFF008CFF),
                   fixedSize: Size(150, 50),
                   textStyle: TextStyle(fontFamily: 'DM Sans', fontSize: 19),
                 ),
                 onPressed: () {},
+                child: Text("Let's go"),
               ),
             ),
           ],

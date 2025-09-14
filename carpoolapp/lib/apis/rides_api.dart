@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:carpoolapp/models/rides.dart';
 import 'package:carpoolapp/config.dart';
-import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 
 class RidesApi {
@@ -47,16 +46,16 @@ class RidesApi {
       throw Exception('Failed to load album');
     }
   }
-  static Future<dynamic> postRide(String Destination, String Departure_Location,
-      String Departure_Date, String Departure_Time, String Ride_Fees) async {
+  static Future<dynamic> postRide(String Destination, String departureLocation,
+      String departureDate, String departureTime, String rideFees) async {
     print('****************');
     var data = {
       "carId": "63590d96cf8cb5f009c5331a",
       "Destination": Destination,
-      "Departure_Location": Departure_Location,
-      "Departure_Date": Departure_Date,
-      "Departure_Time": Departure_Time,
-      "Ride_Fees": Ride_Fees,
+      "Departure_Location": departureLocation,
+      "Departure_Date": departureDate,
+      "Departure_Time": departureTime,
+      "Ride_Fees": rideFees,
     };
     // print("Destination: " + Destination);
     // print("Departure_Date: " + Departure_Date);
@@ -76,8 +75,8 @@ class RidesApi {
   }
   static Future<List<Rides>>? fetchRidesPerSearch(String destination, String departure) async {
     print('**************** RIDES API');
-    print("destination: " + "Ariana");
-    print("departure: " + "Rades");
+    print("destination: " "Ariana");
+    print("departure: " "Rades");
     var data = {
       "destination": destination,
       "departure": departure,

@@ -1,21 +1,17 @@
 // ignore_for_file: deprecated_member_use
 
-import 'dart:convert';
 
 import 'package:carpoolapp/apis/car_api.dart';
 import 'package:carpoolapp/models/car.dart';
 import 'package:flutter/material.dart';
-import 'package:carpoolapp/screens/home_screen.dart';
 import 'package:carpoolapp/screens/add_car_screen.dart';
 import 'package:carpoolapp/screens/edit_car_information.dart';
 import 'package:get/get.dart';
 
-import 'package:http/http.dart' as http;
 
-import 'package:carpoolapp/apis/rides_api.dart';
 
 class CarInformationScreen extends StatefulWidget {
-  const CarInformationScreen({Key? key}) : super(key: key);
+  const CarInformationScreen({super.key});
 
   @override
   State<CarInformationScreen> createState() => _CarInformationScreenState();
@@ -59,11 +55,11 @@ class _CarInformationScreenState extends State<CarInformationScreen> {
             String brand = carInformation!.brand.toString();
             String model = carInformation.model.toString();
             String color = carInformation.color.toString();
-            String energy_type = carInformation.energy_type.toString();
+            String energyType = carInformation.energy_type.toString();
             carList.add(brand);
             carList.add(model);
             carList.add(color);
-            carList.add(energy_type);
+            carList.add(energyType);
             return SafeArea(
               child: SingleChildScrollView(
                 child: GestureDetector(
@@ -310,9 +306,9 @@ class _CarInformationScreenState extends State<CarInformationScreen> {
   }
 }
 
-/** Dialog confirmation delete */
+/// Dialog confirmation delete
 
-showAlertDialog(BuildContext context, String idCar) {
+void showAlertDialog(BuildContext context, String idCar) {
   // set up the buttons
   Widget cancelButton = TextButton(
     child: const Text("Cancel"),

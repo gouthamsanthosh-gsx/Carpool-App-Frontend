@@ -1,7 +1,6 @@
 import 'package:carpoolapp/screens/search_ride_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:carpoolapp/screens/share_ride.dart';
-import 'package:carpoolapp/screens/rides_published_screen.dart';
 import 'package:intl/intl.dart';
 
 import '../apis/rides_api.dart';
@@ -13,7 +12,7 @@ void main() {
 }
 
 class WelcomeScreen extends StatefulWidget {
-  const WelcomeScreen({Key? key}) : super(key: key);
+  const WelcomeScreen({super.key});
 
   @override
   State<WelcomeScreen> createState() => _WelcomeScreenState();
@@ -179,11 +178,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
                                                 children: <Widget>[
                                                   Flexible(
                                                     flex: 1,
                                                     fit: FlexFit.tight,
-                                                    child: Container(
+                                                    child: SizedBox(
                                                         height: 50,
                                                         child: Wrap(
                                                           crossAxisAlignment:
@@ -219,7 +220,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                                   Flexible(
                                                     flex: 1,
                                                     fit: FlexFit.tight,
-                                                    child: Container(
+                                                    child: SizedBox(
                                                       height: 50,
                                                       child: Wrap(
                                                           crossAxisAlignment:
@@ -240,16 +241,16 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                                           ]),
                                                     ), //Container
                                                   ) //Flexible
-                                                ], //<Widget>[]
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
+                                                ],
                                               ),
                                               Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
                                                 children: <Widget>[
                                                   Flexible(
                                                     flex: 1,
                                                     fit: FlexFit.tight,
-                                                    child: Container(
+                                                    child: SizedBox(
                                                         height: 50,
                                                         child: Wrap(
                                                           crossAxisAlignment:
@@ -285,7 +286,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                                   Flexible(
                                                     flex: 1,
                                                     fit: FlexFit.tight,
-                                                    child: Container(
+                                                    child: SizedBox(
                                                       height: 50,
                                                       child: Wrap(
                                                           crossAxisAlignment:
@@ -306,9 +307,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                                           ]),
                                                     ), //Container
                                                   ) //Flexible
-                                                ], //<Widget>[]
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
+                                                ],
                                               ),
                                               Divider(
                                                 height: 20,
@@ -404,7 +403,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       return Text('${snapshot.error}');
                     }
                      return Center(child: const CircularProgressIndicator(
-                       backgroundColor: const Color(0xFF008CFF),
+                       backgroundColor: Color(0xFF008CFF),
                        valueColor:  AlwaysStoppedAnimation(Colors.white54),
                      ));
                   },

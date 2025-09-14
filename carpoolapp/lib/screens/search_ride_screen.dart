@@ -1,17 +1,15 @@
 import 'dart:async';
 
 import 'package:carpoolapp/screens/home_screen.dart';
-import 'package:carpoolapp/screens/rides_published_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:carpoolapp/apis/google_api.dart';
 
-import '../apis/rides_api.dart';
 import 'available_rides_per_location.dart';
 
 class SearchDepartureScreen extends StatefulWidget {
-  const SearchDepartureScreen({Key? key}) : super(key: key);
+  const SearchDepartureScreen({super.key});
 
   @override
   State<SearchDepartureScreen> createState() => _SearchDepartureScreenState();
@@ -20,11 +18,11 @@ class SearchDepartureScreen extends StatefulWidget {
 class _SearchDepartureScreenState extends State<SearchDepartureScreen> {
   final TextEditingController _originController = TextEditingController();
   final TextEditingController _destinationController = TextEditingController();
-  Completer<GoogleMapController> _controller = Completer();
+  final Completer<GoogleMapController> _controller = Completer();
   final LatLng _center = const LatLng(33.7931605, 9.5607653);
-  Set<Marker> _markers = Set<Marker>();
-  Set<Polygon> _polygons = Set<Polygon>();
-  Set<Polyline> _polyline = Set<Polyline>();
+  final Set<Marker> _markers = <Marker>{};
+  final Set<Polygon> _polygons = <Polygon>{};
+  final Set<Polyline> _polyline = <Polyline>{};
   List<LatLng> polygonLatLngs = <LatLng>[];
   int _polygonIdCounter = 1;
   int _polylineIdCounter = 1;
@@ -154,7 +152,7 @@ class _SearchDepartureScreenState extends State<SearchDepartureScreen> {
                               print(value);
                             },
                             decoration: const InputDecoration(
-                              border: const OutlineInputBorder(),
+                              border: OutlineInputBorder(),
                               hintText: 'Origin',
                               prefixIcon: Icon(Icons.location_on),
                             ),
@@ -177,7 +175,7 @@ class _SearchDepartureScreenState extends State<SearchDepartureScreen> {
                               _setPolyline(directions['polyline_decoded']);
                             },
                             decoration: const InputDecoration(
-                              border: const OutlineInputBorder(),
+                              border: OutlineInputBorder(),
                               hintText: 'Destination',
                               prefixIcon: Icon(Icons.location_city),
                             ),

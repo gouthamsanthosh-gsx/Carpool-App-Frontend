@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 
 class CarApi {
   static Future<Car> fetchCar() async {
-    final response = await http.get(Uri.parse(API_URL + '/user/getCarByUser'));
+    final response = await http.get(Uri.parse('$API_URL/user/getCarByUser'));
     if (response.statusCode == 200) {
       // If the server did return a 200 OK response, then parse the JSON.
       final jsonResponse = json.decode(response.body);
@@ -21,7 +21,7 @@ class CarApi {
   static Future<Car> getCarById(idCar) async {
     print("idCar" + idCar);
     final response =
-        await http.get(Uri.parse(API_URL + '/car/getCarById' + '/' + idCar));
+        await http.get(Uri.parse('$API_URL/car/getCarById/' + idCar));
     if (response.statusCode == 200) {
       // If the server did return a 200 OK response, then parse the JSON.
       final jsonResponse = json.decode(response.body);
@@ -34,10 +34,10 @@ class CarApi {
     }
   }
 
-  static Future<Car> editCar(idCar, brand, color, energy_type) async {
+  static Future<Car> editCar(idCar, brand, color, energyType) async {
     final response = await http.patch(
-        Uri.parse(API_URL + '/car/editCarInformation/' + idCar),
-        body: {"brand": brand, "color": color, "energy_type": energy_type});
+        Uri.parse('$API_URL/car/editCarInformation/' + idCar),
+        body: {"brand": brand, "color": color, "energy_type": energyType});
     if (response.statusCode == 200) {
       // If the server did return a 200 OK response, then parse the JSON.
       final jsonResponse = json.decode(response.body);
@@ -52,7 +52,7 @@ class CarApi {
 
   static Future<Car> deleteCar(idCar) async {
     final response = await http
-        .delete(Uri.parse(API_URL + '/car/deleteCarInformation/' + idCar));
+        .delete(Uri.parse('$API_URL/car/deleteCarInformation/' + idCar));
     if (response.statusCode == 200) {
       // If the server did return a 200 OK response, then parse the JSON.
       final jsonResponse = json.decode(response.body);
@@ -66,13 +66,13 @@ class CarApi {
   }
 
   static Future<dynamic> postCars(
-      String brand, String model, String color, String energy_type) async {
+      String brand, String model, String color, String energyType) async {
     model = "Default Model";
     var data = {
       "brand": brand,
       "model": model,
       "color": color,
-      "energy_type": energy_type
+      "energy_type": energyType
     };
     var response = await http.post(
       Uri.parse('$API_URL/car'),

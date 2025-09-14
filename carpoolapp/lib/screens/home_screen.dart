@@ -1,6 +1,5 @@
 import 'package:carpoolapp/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
-import 'add_car_screen.dart';
 import 'car_information_screen.dart';
 import 'package:google_nav_bar/google_nav_bar.dart' show GButton, GNav;
 
@@ -9,7 +8,7 @@ void main() {
 }
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();

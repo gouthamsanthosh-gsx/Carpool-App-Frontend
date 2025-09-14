@@ -1,6 +1,5 @@
 import 'dart:convert' as convert;
 
-import 'package:carpoolapp/models/rides.dart';
 import 'package:carpoolapp/config.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';

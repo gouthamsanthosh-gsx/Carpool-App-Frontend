@@ -1,11 +1,6 @@
-import 'dart:convert';
-import 'dart:developer';
 // import 'dart:ffi';
-import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:carpoolapp/screens/home_screen.dart';
-import 'package:carpoolapp/screens/dialog_screen.dart';
-import 'package:carpoolapp/screens/share_ride.dart';
 
 import 'package:carpoolapp/apis/car_api.dart';
 
@@ -14,7 +9,7 @@ void main() {
 }
 class AddCarScreen extends StatefulWidget {
 //final int carN;
-  const AddCarScreen ({ Key? key}): super(key: key);
+  const AddCarScreen ({ super.key});
 
   @override
   State<AddCarScreen> createState() => _AddCarScreenState();
@@ -33,24 +28,24 @@ class _AddCarScreenState extends State<AddCarScreen> {
   List<DropdownMenuItem<String>> get dropdownItemsCarManufacturer {
     List<DropdownMenuItem<String>> menuItems = [
       DropdownMenuItem(value: "Chrysler", child: Text("Chrysler")),
-      DropdownMenuItem(child: Text("Honda"), value: "Honda"),
-      DropdownMenuItem(child: Text("Mercedes-benz"), value: "Mercedes-benz"),
-      DropdownMenuItem(child: Text("Ford"), value: "Ford"),
-      DropdownMenuItem(child: Text("gmc"), value: "gmc"),
-      DropdownMenuItem(child: Text("audi"), value: "audi"),
-      DropdownMenuItem(child: Text("porsche"), value: "porsche"),
-      DropdownMenuItem(child: Text("bmw"), value: "bmw"),
-      DropdownMenuItem(child: Text("volvo"), value: "volvo"),
-      DropdownMenuItem(child: Text("maserati"), value: "maserati"),
-      DropdownMenuItem(child: Text("fiat"), value: "fiat"),
-      DropdownMenuItem(child: Text("volkswagen"), value: "volkswagen"),
-      DropdownMenuItem(child: Text("toyota"), value: "toyota"),
-      DropdownMenuItem(child: Text("jeep"), value: "jeep"),
-      DropdownMenuItem(child: Text("hyundai"), value: "hyundai"),
-      DropdownMenuItem(child: Text("alfa-romeo"), value: "alfa-romeo"),
-      DropdownMenuItem(child: Text("kia"), value: "kia"),
-      DropdownMenuItem(child: Text("mazda"), value: "mazda"),
-      DropdownMenuItem(child: Text("nissan"), value: "nissan"),
+      DropdownMenuItem(value: "Honda", child: Text("Honda")),
+      DropdownMenuItem(value: "Mercedes-benz", child: Text("Mercedes-benz")),
+      DropdownMenuItem(value: "Ford", child: Text("Ford")),
+      DropdownMenuItem(value: "gmc", child: Text("gmc")),
+      DropdownMenuItem(value: "audi", child: Text("audi")),
+      DropdownMenuItem(value: "porsche", child: Text("porsche")),
+      DropdownMenuItem(value: "bmw", child: Text("bmw")),
+      DropdownMenuItem(value: "volvo", child: Text("volvo")),
+      DropdownMenuItem(value: "maserati", child: Text("maserati")),
+      DropdownMenuItem(value: "fiat", child: Text("fiat")),
+      DropdownMenuItem(value: "volkswagen", child: Text("volkswagen")),
+      DropdownMenuItem(value: "toyota", child: Text("toyota")),
+      DropdownMenuItem(value: "jeep", child: Text("jeep")),
+      DropdownMenuItem(value: "hyundai", child: Text("hyundai")),
+      DropdownMenuItem(value: "alfa-romeo", child: Text("alfa-romeo")),
+      DropdownMenuItem(value: "kia", child: Text("kia")),
+      DropdownMenuItem(value: "mazda", child: Text("mazda")),
+      DropdownMenuItem(value: "nissan", child: Text("nissan")),
     ];
     return menuItems;
   }
@@ -81,33 +76,34 @@ class _AddCarScreenState extends State<AddCarScreen> {
   // }
   List<DropdownMenuItem<String>> get dropdownItemsColor {
     List<DropdownMenuItem<String>> menuItems = [
-      DropdownMenuItem(child: Text("White"), value: "White"),
-      DropdownMenuItem(child: Text("Black"), value: "Black"),
-      DropdownMenuItem(child: Text("Gray"), value: "Gray"),
-      DropdownMenuItem(child: Text("Silver"), value: "Silver"),
-      DropdownMenuItem(child: Text("Red"), value: "Red"),
-      DropdownMenuItem(child: Text("Blue"), value: "Blue"),
-      DropdownMenuItem(child: Text("Brown"), value: "Brown"),
-      DropdownMenuItem(child: Text("Green"), value: "Green"),
-      DropdownMenuItem(child: Text("Beige"), value: "Beige"),
-      DropdownMenuItem(child: Text("Orange"), value: "Orange"),
-      DropdownMenuItem(child: Text("Gold"), value: "Gold"),
-      DropdownMenuItem(child: Text("Yellow"), value: "Yellow"),
-      DropdownMenuItem(child: Text("Purple"), value: "Purple"),
+      DropdownMenuItem(value: "White", child: Text("White")),
+      DropdownMenuItem(value: "Black", child: Text("Black")),
+      DropdownMenuItem(value: "Gray", child: Text("Gray")),
+      DropdownMenuItem(value: "Silver", child: Text("Silver")),
+      DropdownMenuItem(value: "Red", child: Text("Red")),
+      DropdownMenuItem(value: "Blue", child: Text("Blue")),
+      DropdownMenuItem(value: "Brown", child: Text("Brown")),
+      DropdownMenuItem(value: "Green", child: Text("Green")),
+      DropdownMenuItem(value: "Beige", child: Text("Beige")),
+      DropdownMenuItem(value: "Orange", child: Text("Orange")),
+      DropdownMenuItem(value: "Gold", child: Text("Gold")),
+      DropdownMenuItem(value: "Yellow", child: Text("Yellow")),
+      DropdownMenuItem(value: "Purple", child: Text("Purple")),
     ];
     return menuItems;
   }
 
   List<DropdownMenuItem<String>> get dropdownItemsEnergyType {
     List<DropdownMenuItem<String>> menuItems = [
-      DropdownMenuItem(child: Text("Gasoline"), value: "Gasoline"),
-      DropdownMenuItem(child: Text("Diesel"), value: "Diesel"),
-      DropdownMenuItem(child: Text("Electric"), value: "Electric"),
+      DropdownMenuItem(value: "Gasoline", child: Text("Gasoline")),
+      DropdownMenuItem(value: "Diesel", child: Text("Diesel")),
+      DropdownMenuItem(value: "Electric", child: Text("Electric")),
       DropdownMenuItem(
-          child: Text("Hybrid Electric"), value: "Hybrid Electric"),
+          value: "Hybrid Electric",
+          child: Text("Hybrid Electric")),
       DropdownMenuItem(
-          child: Text("Plug-in Hybrid Electric"),
-          value: "Plug-in Hybrid Electric"),
+          value: "Plug-in Hybrid Electric",
+          child: Text("Plug-in Hybrid Electric")),
     ];
     return menuItems;
   }
@@ -348,7 +344,7 @@ class _AddCarScreenState extends State<AddCarScreen> {
                       ),
                       icon: const Icon(Icons.arrow_drop_down_circle,
                           color: Color(0xFF008CFF)),
-                      value: selectedValueManufacturer,
+                      initialValue: selectedValueManufacturer,
                       items: dropdownItemsCarManufacturer,
                       onChanged: (String? newValue) {
                         setState(() {
@@ -432,7 +428,7 @@ class _AddCarScreenState extends State<AddCarScreen> {
                       ),
                       icon: const Icon(Icons.arrow_drop_down_circle,
                           color: Color(0xFF008CFF)),
-                      value: selectedValueColor,
+                      initialValue: selectedValueColor,
                       items: dropdownItemsColor,
                       onChanged: (String? newValue) {
                         setState(() {
@@ -473,7 +469,7 @@ class _AddCarScreenState extends State<AddCarScreen> {
                       ),
                       icon: const Icon(Icons.arrow_drop_down_circle,
                           color: Color(0xFF008CFF)),
-                      value: selectedValueEnergyType,
+                      initialValue: selectedValueEnergyType,
                       items: dropdownItemsEnergyType,
                       onChanged: (String? newValue) {
                         setState(() {
@@ -490,7 +486,6 @@ class _AddCarScreenState extends State<AddCarScreen> {
                     ),
                   ),
                   ElevatedButton(
-                    child: Text("Confirm"),
                     onPressed: () {
                       CarApi.postCars(brand, model, color, energy_type);
                       Navigator.push(
@@ -505,6 +500,7 @@ class _AddCarScreenState extends State<AddCarScreen> {
                       fixedSize: Size(150, 50),
                       textStyle: TextStyle(fontFamily: 'DM Sans', fontSize: 19),
                     ),
+                    child: Text("Confirm"),
                   ),
                 ],
               ),

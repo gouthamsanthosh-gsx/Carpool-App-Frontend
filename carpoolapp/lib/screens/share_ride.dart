@@ -1,27 +1,25 @@
 import 'dart:convert';
 
-import 'package:carpoolapp/config.dart';
 import 'package:carpoolapp/screens/rides_published_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:carpoolapp/screens/home_screen.dart';
 import 'package:carpoolapp/apis/rides_api.dart';
-import 'package:carpoolapp/apis/google_api.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import 'package:uuid/uuid.dart';
 import 'package:http/http.dart' as http;
 
-import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geocoding/geocoding.dart';
 
-import 'add_car_screen.dart';
 
 void main() {
   runApp(ShareRideScreen());
 }
 
 class ShareRideScreen extends StatefulWidget {
+  const ShareRideScreen({super.key});
+
   @override
   State<ShareRideScreen> createState() => _ShareRideScreenState();
 }
@@ -32,8 +30,8 @@ class _ShareRideScreenState extends State<ShareRideScreen> {
   final TextEditingController _controller = TextEditingController();
   final TextEditingController _DestinationController = TextEditingController();
   var uuid = Uuid();
-  String _sessionToken = "1235";
-  String _sessionTokenDestination = "12356";
+  final String _sessionToken = "1235";
+  final String _sessionTokenDestination = "12356";
   List<dynamic> _placesList = [];
   List<dynamic> _placesListDestination = [];
   TextEditingController timeinput = TextEditingController();
@@ -87,11 +85,11 @@ class _ShareRideScreenState extends State<ShareRideScreen> {
   }
 
   void getSuggestion(String input) async {
-    String kPlaces_Api_Key = "AIzaSyD6hhlx6VoL2n0HRnwuiTeZwuRN0_og0ys";
+    String kplacesApiKey = "AIzaSyD6hhlx6VoL2n0HRnwuiTeZwuRN0_og0ys";
     String baseURL =
         "https://maps.googleapis.com/maps/api/place/autocomplete/json";
     String request =
-        '$baseURL?input=$input&key=$kPlaces_Api_Key&sessionToken=$_sessionToken';
+        '$baseURL?input=$input&key=$kplacesApiKey&sessionToken=$_sessionToken';
     // print(
     //     '$baseURL?input=$input&key=$kPlaces_Api_Key&sessionToken=$_sessionToken');
     var response = await http.get(Uri.parse(request));
@@ -106,11 +104,11 @@ class _ShareRideScreenState extends State<ShareRideScreen> {
   }
 
   void getSuggestionDestination(String input) async {
-    String kPlaces_Api_Key = "AIzaSyD6hhlx6VoL2n0HRnwuiTeZwuRN0_og0ys";
+    String kplacesApiKey = "AIzaSyD6hhlx6VoL2n0HRnwuiTeZwuRN0_og0ys";
     String baseURL =
         "https://maps.googleapis.com/maps/api/place/autocomplete/json";
     String request =
-        '$baseURL?input=$input&key=$kPlaces_Api_Key&sessionToken=$_sessionTokenDestination';
+        '$baseURL?input=$input&key=$kplacesApiKey&sessionToken=$_sessionTokenDestination';
     // print(
     //     '$baseURL?input=$input&key=$kPlaces_Api_Key&sessionToken=$_sessionToken');
     var response = await http.get(Uri.parse(request));
@@ -186,9 +184,9 @@ class _ShareRideScreenState extends State<ShareRideScreen> {
                       },
                       controller: _controller,
                       decoration: const InputDecoration(
-                        border: const OutlineInputBorder(),
+                        border: OutlineInputBorder(),
                         hintText: 'Your location',
-                        prefixIcon: const Icon(Icons.my_location),
+                        prefixIcon: Icon(Icons.my_location),
                       ),
                     ),
                     ),
@@ -214,7 +212,6 @@ class _ShareRideScreenState extends State<ShareRideScreen> {
                                     _placesList[index]['description'];
                                 Departure_Location =
                                     _placesList[index]['description'];
-                                ;
                                 /** This is the option selected */
                                 print(_placesList[index]['description']);
                                 print(locations.last.longitude);
@@ -251,9 +248,9 @@ class _ShareRideScreenState extends State<ShareRideScreen> {
                   child: TextFormField(
                     controller: _DestinationController,
                     decoration: const InputDecoration(
-                      border: const OutlineInputBorder(),
+                      border: OutlineInputBorder(),
                       hintText: 'The destination',
-                      prefixIcon: const Icon(Icons.location_on_outlined),
+                      prefixIcon: Icon(Icons.location_on_outlined),
                     ),
                   ),
                 ),
@@ -615,9 +612,9 @@ class _ShareRideScreenState extends State<ShareRideScreen> {
                         key: Key("departure_text_field"),
                         controller: _controller,
                         decoration: const InputDecoration(
-                          border: const OutlineInputBorder(),
+                          border: OutlineInputBorder(),
                           hintText: 'Your location',
-                          prefixIcon: const Icon(Icons.my_location),
+                          prefixIcon: Icon(Icons.my_location),
                         ),
                       ),
                     ),
@@ -641,7 +638,6 @@ class _ShareRideScreenState extends State<ShareRideScreen> {
                                         _placesList[index]['description'];
                                         Departure_Location =
                                         _placesList[index]['description'];
-                                        ;
                                         /** This is the option selected */
                                         print(
                                             _placesList[index]['description']);
@@ -681,9 +677,9 @@ class _ShareRideScreenState extends State<ShareRideScreen> {
                         key: Key("destination_text_field"),
                         controller: _DestinationController,
                         decoration: const InputDecoration(
-                          border: const OutlineInputBorder(),
+                          border: OutlineInputBorder(),
                           hintText: 'The destination',
-                          prefixIcon: const Icon(Icons.location_on_outlined),
+                          prefixIcon: Icon(Icons.location_on_outlined),
                         ),
                       ),
                     ),
@@ -877,7 +873,7 @@ class _ShareRideScreenState extends State<ShareRideScreen> {
 
 
   Widget _datePicker() {
-    bool _decideWhichDayToEnable(DateTime day) {
+    bool decideWhichDayToEnable(DateTime day) {
       if ((day.isAfter(DateTime.now().subtract(Duration(days: 1))) &&
           day.isBefore(DateTime.now().add(Duration(days: 30))))) {
         return true;
@@ -899,18 +895,18 @@ class _ShareRideScreenState extends State<ShareRideScreen> {
           context: context,
           // firstDate: DateTime(2000),
           // lastDate: DateTime(2100),
-          firstDate: new DateTime(DateTime.now().year),
-          lastDate: new DateTime(DateTime.now().year + 1),
+          firstDate: DateTime(DateTime.now().year),
+          lastDate: DateTime(DateTime.now().year + 1),
           initialDate: DateTime.now(),
           //selectableDayPredicate: (day) => day.isBefore(DateTime.now()),
           // selectableDayPredicate: (day) => day.isAfter(DateTime.now()),
-          selectableDayPredicate: _decideWhichDayToEnable,
+          selectableDayPredicate: decideWhichDayToEnable,
         );
         if (selectedDate != null) {
           setState(() {
             /** Setting Departure_Date that will be in post function to _dateController.text for date of departure */
             _dateController.text = DateFormat.yMd().format(selectedDate);
-            print("####" + _dateController.text);
+            print("####${_dateController.text}");
             Departure_Date = DateFormat.yMd()
                 .format(selectedDate); //set the value of text field.
           });

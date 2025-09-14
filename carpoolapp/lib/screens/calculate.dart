@@ -5,7 +5,7 @@ void main() {
 }
 
 class CalculatorPage extends StatelessWidget {
-  const CalculatorPage({Key? key}) : super(key: key);
+  const CalculatorPage({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

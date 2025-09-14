@@ -3,18 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'screens/home_screen.dart';
 import 'package:carpoolapp/screens/add_car_screen.dart';
-import 'package:carpoolapp/screens/home_screen.dart';
 // import 'package:carpoolapp/screens/ride_screen.dart';
 import 'package:carpoolapp/screens/car_information_screen.dart';
 // import 'package:carpoolapp/screens/autocomplete.dart';
-import 'package:google_nav_bar/google_nav_bar.dart' show GButton, GNav;
 
 void main() {
   runApp(const CarpoolApp());
 }
 
 class CarpoolApp extends StatefulWidget {
-  const CarpoolApp({Key? key}) : super(key: key);
+  const CarpoolApp({super.key});
   @override
   State<CarpoolApp> createState() => _CarpoolAppState();
 }

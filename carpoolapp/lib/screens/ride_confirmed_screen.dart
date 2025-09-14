@@ -2,7 +2,7 @@ import 'package:carpoolapp/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class RideConfirmedWidget extends StatefulWidget {
-  const RideConfirmedWidget({Key? key}) : super(key: key);
+  const RideConfirmedWidget({super.key});
 
   @override
   State<RideConfirmedWidget> createState() => _RideConfirmedWidgetState();

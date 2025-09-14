@@ -21,14 +21,14 @@ class Car {
     energy_type = json["energy_type"];
   }
   Map<String, dynamic> toJson() {
-    final _data = <String, dynamic>{};
-    _data["id"] = id;
-    _data["brand"] = brand;
-    _data["color"] = color;
-    _data["model"] = model;
-    _data["energy_type"] = energy_type;
+    final data = <String, dynamic>{};
+    data["id"] = id;
+    data["brand"] = brand;
+    data["color"] = color;
+    data["model"] = model;
+    data["energy_type"] = energy_type;
 
-    return _data;
+    return data;
   }
 
 // Get data from backend
