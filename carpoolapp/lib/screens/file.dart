@@ -60,11 +60,6 @@ class _ShareRideScreenState extends State<ShareRideScreen> {
   }
 
   void onChange() {
-    if (_sessionToken == null) {
-      setState(() {
-        _sessionToken = uuid.v4();
-      });
-    }
     getSuggestion(_DestinationController.text);
     //print(_DestinationController.text);
   }
@@ -114,7 +109,7 @@ class _ShareRideScreenState extends State<ShareRideScreen> {
           icon: Icon(Icons.arrow_back, color: Colors.black),
           label: Text("Back"),
           style: ElevatedButton.styleFrom(
-            primary: Colors.transparent,
+            backgroundColor: Colors.transparent,
             elevation: 0,
           ),
         ),
@@ -352,8 +347,7 @@ class _ShareRideScreenState extends State<ShareRideScreen> {
                       // );
                     },
                     style: ElevatedButton.styleFrom(
-                      primary: const Color(0xFF008CFF),
-                      onPrimary: Colors.white,
+                      foregroundColor: Colors.white, backgroundColor: const Color(0xFF008CFF),
                       fixedSize: const Size(150, 50),
                       textStyle:
                           const TextStyle(fontFamily: 'DM Sans', fontSize: 19),

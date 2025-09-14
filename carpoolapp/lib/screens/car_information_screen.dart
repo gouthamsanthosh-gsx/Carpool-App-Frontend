@@ -286,8 +286,7 @@ class _CarInformationScreenState extends State<CarInformationScreen> {
                       },
                       style: ElevatedButton.styleFrom(
                         // side: const BorderSide(color: Color(0xFF008CFF), width: 3),
-                        primary: const Color(0xFF008CFF),
-                        onPrimary: Colors.white,
+                        foregroundColor: Colors.white, backgroundColor: const Color(0xFF008CFF),
                         fixedSize: const Size(150, 50),
                         textStyle: const TextStyle(
                             fontFamily: 'DM Sans',
@@ -315,7 +314,7 @@ class _CarInformationScreenState extends State<CarInformationScreen> {
 
 showAlertDialog(BuildContext context, String idCar) {
   // set up the buttons
-  Widget cancelButton = FlatButton(
+  Widget cancelButton = TextButton(
     child: const Text("Cancel"),
     onPressed: () {
       Navigator.of(context).pop();
@@ -329,7 +328,7 @@ showAlertDialog(BuildContext context, String idCar) {
      // Navigator.of(context).pop(); // dismiss dialog
     },
   );
-  Widget continueButton = FlatButton(
+  Widget continueButton = TextButton(
     child: const Text("Yes, I'm sure!"),
     onPressed: () {
       print("idCar:  $idCar");

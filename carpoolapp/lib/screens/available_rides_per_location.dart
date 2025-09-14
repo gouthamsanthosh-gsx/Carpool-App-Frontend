@@ -60,7 +60,7 @@ class _AvailableRidesPerSearchScreenState
           //label: Text("Back"),
           label: Text("Back"),
           style: ElevatedButton.styleFrom(
-            primary: Colors.transparent,
+            backgroundColor: Colors.transparent,
             elevation: 0,
           ),
         ),

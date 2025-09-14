@@ -134,7 +134,7 @@ class _SearchDepartureScreenState extends State<SearchDepartureScreen> {
               icon: const Icon(Icons.arrow_back, color: Colors.black),
               label: const Text("Back"),
               style: ElevatedButton.styleFrom(
-                primary: Colors.transparent,
+                backgroundColor: Colors.transparent,
                 elevation: 0,
               ),
             ),
@@ -206,9 +206,7 @@ class _SearchDepartureScreenState extends State<SearchDepartureScreen> {
                             );
                           },
                           style: ElevatedButton.styleFrom(
-                            shape: StadiumBorder(),
-                            primary: const Color(0xFF008CFF),
-                            onPrimary: Color(0xffF8F8F8),
+                            foregroundColor: Color(0xffF8F8F8), shape: StadiumBorder(), backgroundColor: const Color(0xFF008CFF),
                             fixedSize: const Size(150, 50),
                             textStyle: const TextStyle(
                                 fontFamily: 'DM Sans', fontSize: 19),

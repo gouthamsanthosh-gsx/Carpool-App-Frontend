@@ -64,7 +64,7 @@ class RidesApi {
     // print("Departure_Time: " + Departure_Time);
     // print("Ride_Fees: " + Ride_Fees);
     var response = await http.post(
-      '$API_URL/ride',
+      Uri.parse('$API_URL/ride'),
       body: json.encode(data),
       headers: {
         'Content-Type': 'application/json',
@@ -83,7 +83,7 @@ class RidesApi {
       "departure": departure,
     };
     var response = await http.post(
-      '$API_URL/ridesPerSearch',
+      Uri.parse('$API_URL/ridesPerSearch'),
       body: json.encode(data),
       headers: {
         'Content-Type': 'application/json',

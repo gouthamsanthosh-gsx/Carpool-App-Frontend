@@ -75,7 +75,7 @@ class CarApi {
       "energy_type": energy_type
     };
     var response = await http.post(
-      API_URL + '/car',
+      Uri.parse('$API_URL/car'),
       body: json.encode(data),
       headers: {
         'Content-Type': 'application/json',
@@ -88,7 +88,7 @@ class CarApi {
 
   static Future<List> getManufacturer() async {
     var response = await http.get(
-      API_URL + '/getManufacturer',
+      Uri.parse('$API_URL/getManufacturer'),
       headers: {
         'Content-Type': 'application/json',
       },

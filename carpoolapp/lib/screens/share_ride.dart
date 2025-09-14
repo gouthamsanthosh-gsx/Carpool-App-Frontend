@@ -78,21 +78,11 @@ class _ShareRideScreenState extends State<ShareRideScreen> {
 
 
   void onChange() {
-    if (_sessionToken == null) {
-      setState(() {
-        _sessionToken = uuid.v4();
-      });
-    }
     getSuggestion(_controller.text);
     // getSuggestion(_DestinationController.text);
   }
 
   void onChangeDestination() {
-    if (_sessionToken == null) {
-      setState(() {
-        _sessionTokenDestination = uuid.v4();
-      });
-    }
     getSuggestionDestination(_DestinationController.text);
   }
 
@@ -434,8 +424,7 @@ class _ShareRideScreenState extends State<ShareRideScreen> {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: const Color(0xFF008CFF),
-                    onPrimary: Color(0xffF8F8F8),
+                    foregroundColor: Color(0xffF8F8F8), backgroundColor: const Color(0xFF008CFF),
                     fixedSize: const Size(150, 50),
                     textStyle:
                         const TextStyle(fontFamily: 'DM Sans', fontSize: 19),
@@ -581,7 +570,7 @@ class _ShareRideScreenState extends State<ShareRideScreen> {
             icon: const Icon(Icons.arrow_back, color: Colors.black),
             label: const Text("Back"),
             style: ElevatedButton.styleFrom(
-              primary: Colors.transparent,
+              backgroundColor: Colors.transparent,
               elevation: 0,
             ),
           ),
@@ -870,8 +859,7 @@ class _ShareRideScreenState extends State<ShareRideScreen> {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        primary: const Color(0xFF008CFF),
-                        onPrimary: Color(0xffF8F8F8),
+                        foregroundColor: Color(0xffF8F8F8), backgroundColor: const Color(0xFF008CFF),
                         fixedSize: const Size(150, 50),
                         textStyle:
                         const TextStyle(fontFamily: 'DM Sans', fontSize: 19),

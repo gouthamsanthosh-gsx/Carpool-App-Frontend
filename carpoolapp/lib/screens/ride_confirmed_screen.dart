@@ -114,9 +114,7 @@ class _RideConfirmedWidgetState extends State<RideConfirmedWidget> {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        shape: StadiumBorder(),
-                        primary: Colors.white54,
-                        onPrimary: Colors.black,
+                        foregroundColor: Colors.black, shape: StadiumBorder(), backgroundColor: Colors.white54,
                         fixedSize: Size(150, 50),
                         textStyle: TextStyle(fontFamily: 'DM Sans', fontSize: 19),
                       ),

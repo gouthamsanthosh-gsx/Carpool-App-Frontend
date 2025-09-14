@@ -183,7 +183,7 @@ class _AddCarScreenState extends State<AddCarScreen> {
             icon: Icon(Icons.arrow_back, color: Colors.black),
             label: Text("Back"),
             style: ElevatedButton.styleFrom(
-              primary: Colors.transparent,
+              backgroundColor: Colors.transparent,
               elevation: 0,
             ),
           ),
@@ -251,8 +251,7 @@ class _AddCarScreenState extends State<AddCarScreen> {
                           );
                         },
                         style: ElevatedButton.styleFrom(
-                          primary: Color(0xFF008CFF),
-                          onPrimary: Colors.white,
+                          foregroundColor: Colors.white, backgroundColor: Color(0xFF008CFF),
                           fixedSize: Size(150, 50),
                           textStyle:
                               TextStyle(fontFamily: 'DM Sans', fontSize: 19),
@@ -291,7 +290,7 @@ class _AddCarScreenState extends State<AddCarScreen> {
           icon: Icon(Icons.arrow_back, color: Colors.black),
           label: Text("Back"),
           style: ElevatedButton.styleFrom(
-            primary: Colors.transparent,
+            backgroundColor: Colors.transparent,
             elevation: 0,
           ),
         ),
@@ -502,8 +501,7 @@ class _AddCarScreenState extends State<AddCarScreen> {
                       );
                     },
                     style: ElevatedButton.styleFrom(
-                      primary: Color(0xFF008CFF),
-                      onPrimary: Colors.white,
+                      foregroundColor: Colors.white, backgroundColor: Color(0xFF008CFF),
                       fixedSize: Size(150, 50),
                       textStyle: TextStyle(fontFamily: 'DM Sans', fontSize: 19),
                     ),

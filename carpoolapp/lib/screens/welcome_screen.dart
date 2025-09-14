@@ -86,8 +86,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        primary: const Color(0xFF37A33B),
-                        onPrimary: Colors.white,
+                        foregroundColor: Colors.white, backgroundColor: const Color(0xFF37A33B),
                         fixedSize: const Size(130, 40),
                         textStyle: const TextStyle(
                             fontFamily: 'DM Sans', fontSize: 13),
@@ -105,10 +104,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        side: const BorderSide(
-                            color: Color(0xFF008CFF), width: 3),
-                        primary: const Color(0xFFF8F8F8),
-                        onPrimary: Colors.black,
+                        foregroundColor: Colors.black, side: const BorderSide(
+                            color: Color(0xFF008CFF), width: 3), backgroundColor: const Color(0xFFF8F8F8),
                         fixedSize: const Size(130, 40),
                         textStyle: const TextStyle(
                             fontFamily: 'DM Sans', fontSize: 13),

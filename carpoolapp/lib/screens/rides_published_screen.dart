@@ -51,7 +51,7 @@ class _RidesPublishedScreenState extends State<RidesPublishedScreen> {
           icon: Icon(Icons.arrow_back, color: Colors.black),
           label: Text("Back"),
           style: ElevatedButton.styleFrom(
-            primary: Colors.transparent,
+            backgroundColor: Colors.transparent,
             elevation: 0,
           ),
         ),

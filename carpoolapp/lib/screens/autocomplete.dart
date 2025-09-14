@@ -28,11 +28,6 @@ class _GooglePlacesState extends State<GooglePlaces> {
   }
 
   void onChange() {
-    if (_sessionToken == null) {
-      setState(() {
-        _sessionToken = uuid.v4();
-      });
-    }
     getSuggestion(_controller.text);
   }
 

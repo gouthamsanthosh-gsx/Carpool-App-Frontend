@@ -45,7 +45,7 @@ class _ConfirmRideScreenState extends State<ConfirmRideScreen> {
           //label: Text("Back"),
           label: Text("Back"),
           style: ElevatedButton.styleFrom(
-            primary: Colors.transparent,
+            backgroundColor: Colors.transparent,
             elevation: 0,
           ),
         ),
@@ -199,9 +199,7 @@ class _ConfirmRideScreenState extends State<ConfirmRideScreen> {
                                   );
                                 },
                                 style: ElevatedButton.styleFrom(
-                                  shape: StadiumBorder(),
-                                  primary: Color(0xFF008CFF),
-                                  onPrimary: Colors.white,
+                                  foregroundColor: Colors.white, shape: StadiumBorder(), backgroundColor: Color(0xFF008CFF),
                                   fixedSize: Size(150, 50),
                                   textStyle: TextStyle(fontFamily: 'DM Sans', fontSize: 19),
                                 ),

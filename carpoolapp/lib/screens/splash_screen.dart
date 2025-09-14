@@ -67,9 +67,7 @@ class _SplashState extends State<Splash> {
               child: ElevatedButton(
                 child: Text("Let's go"),
                 style: ElevatedButton.styleFrom(
-                  shape: StadiumBorder(),
-                  primary: Color(0xFF008CFF),
-                  onPrimary: Colors.white,
+                  foregroundColor: Colors.white, shape: StadiumBorder(), backgroundColor: Color(0xFF008CFF),
                   fixedSize: Size(150, 50),
                   textStyle: TextStyle(fontFamily: 'DM Sans', fontSize: 19),
                 ),
